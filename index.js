@@ -9,6 +9,8 @@
 'use strict';
 
 const plugins = [
+  // Transforms decortators
+  require.resolve('babel-plugin-transform-decorators-legacy'),
   // class { handleClick = () => { } }
   require.resolve('babel-plugin-transform-class-properties'),
   // The following two plugins use Object.assign directly, instead of Babel's
@@ -34,13 +36,6 @@ const plugins = [
       helpers: false,
       polyfill: false,
       regenerator: true,
-    },
-  ],
-  // Transforms decortators
-  [
-    require.resolve('babel-plugin-transform-decorators-legacy'),
-    {
-      useBuiltIns: true,
     },
   ],
 ];
